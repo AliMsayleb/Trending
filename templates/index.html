@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Index title</title>
+{% endblock %}
+
+{% block body %}
+<h2 class="mb-5">Top trending today</h2>
+<form class="from-group" method="GET" action="/">
+    <label for="countrySelector">Select country</label>
+    <select class="selectpicker ml-5 mr-5" data-live-search="true" style="display:block !important;" id="countrySelector" name="country">
+    {% include 'countries.html' %}
+    </select>
+    <input type="submit" value="submit" class="btn btn-primary">
+</form>
+<ul>
+{% for tag in tags %}
+    <li class="list-item">
+        <a target="_blank" href="{{ tag['link']}}">#{{ tag['name'] }}</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}
