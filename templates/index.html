@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block body %}
-<h2 class="mb-5">Top trending today</h2>
+<h2 class="mb-5">Top trending today in {{ country }}</h2>
 <form class="from-group" method="GET" action="/">
     <label for="countrySelector">Select country</label>
     <select class="selectpicker ml-5 mr-5" data-live-search="true" style="display:block !important;" id="countrySelector" name="country">
